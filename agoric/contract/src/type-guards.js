@@ -115,7 +115,7 @@ export const PublicI = M.interface('public', {
   makeBuyItemInvitation: M.call().returns(M.promise()),
   // Getters
   getCharacters: M.call().returns(M.array()),
-  getCharacterInventory: M.call().returns(M.splitRecord({ items: M.array() })),
+  getCharacterInventory: M.call(M.string()).returns(M.splitRecord({ items: M.array() })),
   getCharactersForSale: M.call().returns(M.array()),
   getItemsForSale: M.call().returns(M.array()),
   getMarketMetrics: M.call().returns(M.record()),
@@ -131,7 +131,7 @@ export const CreatorI = M.interface('creator', {
     M.arrayOf(ItemGuard),
   ).returns(),
   initializeCharacterNamesEntries: M.call().returns(),
-  publishItemCollection: M.call().returns(M.promise()),
+  publishItemCollection: M.call(M.record(), M.array()).returns(M.promise()),
 });
 
 export const CharacterI = M.interface('character', {
@@ -140,7 +140,7 @@ export const CharacterI = M.interface('character', {
   unequip: M.call().returns(M.promise()),
   unequipAll: M.call().returns(M.promise()),
   swap: M.call().returns(M.promise()),
-  validateInventoryState: M.call().returns(M.boolean()),
+  validateInventoryState: M.call(M.array()).returns(M.boolean()),
   isNameUnique: M.call(M.string()).returns(M.boolean()),
   getRandomBaseIndex: M.call().returns(M.any()),
   calculateLevel: M.call(M.string()).returns(M.gte(0)),
@@ -154,8 +154,8 @@ export const CharacterI = M.interface('character', {
 
 export const ItemI = M.interface('item', {
   mint: M.call().returns(M.promise()),
-  mintDefaultBatch: M.call().returns(M.promise(M.string())),
-  mintBatch: M.call().returns(M.promise(M.string())),
+  mintDefaultBatch: M.call(M.remotable()).returns(M.promise(M.string())),
+  mintBatch: M.call(M.remotable(), M.array()).returns(M.promise(M.string())),
   initializeBaseItems: M.call(M.arrayOf(ItemGuard)).returns(),
 });
 
@@ -203,8 +203,8 @@ export const MarketEntryGuard = M.splitRecord({
 export const MarketI = M.interface('market', {
   sellItem: M.call().returns(M.promise()),
   buyItem: M.call().returns(M.promise()),
-  buyFirstSaleItem: M.call().returns(M.promise()),
-  buySecondarySaleItem: M.call().returns(M.promise()),
+  buyFirstSaleItem: M.call(M.remotable(), M.remotable(), M.record()).returns(M.promise()),
+  buySecondarySaleItem: M.call(M.remotable(), M.remotable(), M.record()).returns(M.promise()),
   handleExitItem: M.call(MarketEntryGuard).returns(),
   handleExitCharacter: M.call(MarketEntryGuard).returns(),
   makeMarketItemRecorderKit: M.call(M.number()).returns(M.promise()),
