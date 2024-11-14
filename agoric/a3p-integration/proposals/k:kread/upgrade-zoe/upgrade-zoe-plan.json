@@ -1,0 +1,17 @@
+{
+  "name": "upgrade-zoe",
+  "script": "upgrade-zoe.js",
+  "permit": "upgrade-zoe-permit.json",
+  "bundles": [
+    {
+      "entrypoint": "@agoric/vats/src/vat-zoe.js",
+      "bundleID": "b1-a6e125677dde1b87dbe7e533d30381d5ae7fc49d2df323923ac0e9912fd01149ee885b9f8be7d76451325ca9c6de8518def0eae366118788b68313e61aa7a1f0",
+      "fileName": "/Users/jorgelopes/.agoric/cache/b1-a6e125677dde1b87dbe7e533d30381d5ae7fc49d2df323923ac0e9912fd01149ee885b9f8be7d76451325ca9c6de8518def0eae366118788b68313e61aa7a1f0.json"
+    },
+    {
+      "entrypoint": "@agoric/vats/src/proposals/upgrade-zoe-proposal.js",
+      "bundleID": "b1-09b92c35ba08e8d3625eb04796ab70cd02cf9ef3bfd79e8f256b419afb644e4a9e9e4b06c068abe2ecc2769a53a55024a27851ec7bfeb13e79b3781d0b961597",
+      "fileName": "/Users/jorgelopes/.agoric/cache/b1-09b92c35ba08e8d3625eb04796ab70cd02cf9ef3bfd79e8f256b419afb644e4a9e9e4b06c068abe2ecc2769a53a55024a27851ec7bfeb13e79b3781d0b961597.json"
+    }
+  ]
+}

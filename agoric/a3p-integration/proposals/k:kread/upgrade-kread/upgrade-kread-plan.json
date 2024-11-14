@@ -1,0 +1,12 @@
+{
+  "name": "upgrade-kread",
+  "script": "upgrade-kread.js",
+  "permit": "upgrade-kread-permit.json",
+  "bundles": [
+    {
+      "entrypoint": "@agoric/vats/src/proposals/upgrade-kread-proposal.js",
+      "bundleID": "b1-5a5fe6f0ad0d825eee46c01b505378506b94576915ee65b531d963533aed9f3cb23180862202b1a3f51ce137434a7db6ce2948dac491f94040d49b0168f1584c",
+      "fileName": "/Users/jorgelopes/.agoric/cache/b1-5a5fe6f0ad0d825eee46c01b505378506b94576915ee65b531d963533aed9f3cb23180862202b1a3f51ce137434a7db6ce2948dac491f94040d49b0168f1584c.json"
+    }
+  ]
+}
