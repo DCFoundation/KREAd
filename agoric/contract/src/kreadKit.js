@@ -6,6 +6,7 @@ import { assert } from '@agoric/assert';
 import { AmountMath, BrandShape } from '@agoric/ertp';
 import { prepareExoClassKit, M } from '@agoric/vat-data';
 import { makeDurableZone } from '@agoric/zone/durable.js';
+import { subscribeLatest } from '@agoric/notifier/subscribe.js';
 
 import { E } from '@endo/eventual-send';
 import { errors } from './errors.js';
@@ -1016,7 +1017,10 @@ export const prepareKreadKit = (
           const characterLevel = characterFacet.calculateLevel(asset.name);
 
           const subscriber = E(seat).getSubscriber();
-          void E.when(E(subscriber).getUpdateSince(), () => {
+          const asyncIterableP = subscribeLatest(subscriber);
+          const asyncIteratorP = E(asyncIterableP)[Symbol.asyncIterator]();
+
+          E.when(E(asyncIteratorP).next(), () => {
             marketFacet.updateMetrics('character', {
               marketplaceAverageLevel: {
                 type: 'remove',
@@ -1036,7 +1040,10 @@ export const prepareKreadKit = (
           const { seat, asset, id, recorderKit } = entry;
 
           const subscriber = E(seat).getSubscriber();
-          E.when(E(subscriber).getUpdateSince(), () => {
+          const asyncIterableP = subscribeLatest(subscriber);
+          const asyncIteratorP = E(asyncIterableP)[Symbol.asyncIterator]();
+
+          E.when(E(asyncIteratorP).next(), () => {
             marketFacet.updateMetrics('item', {
               marketplaceAverageLevel: {
                 type: 'remove',

@@ -159,6 +159,8 @@ export const prepare = async (zcf, privateArgs, baggage) => {
     zcf,
     privateArgs.initialPoserInvitation,
     {},
+    powers.storageNode,
+    powers.marshaller,
   );
 
   const { governorFacet } = makeDurableGovernorFacet(

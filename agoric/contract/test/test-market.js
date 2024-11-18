@@ -10,6 +10,7 @@ import { makeCopyBag } from '@agoric/store';
 import { errors } from '../src/errors.js';
 import { defaultItems } from './items.js';
 import { multiplyBy } from '@agoric/zoe/src/contractSupport/ratio.js';
+import { eventLoopIteration } from '@agoric/internal/src/testing-utils.js';
 
 test.before(async (t) => {
   const bootstrap = await bootstrapContext();
@@ -276,6 +277,8 @@ test.serial('---| MARKET - Buy character', async (t) => {
   const bobsPayout = await bob.getSeat().market.getPayout('Price');
   bob.depositPayment(bobsPayout);
   t.deepEqual(bob.getPaymentBalance(), 40n, 'Bob received payout');
+
+  await eventLoopIteration();
 
   charactersForSale = await E(publicFacet).getCharactersForSale();
   t.deepEqual(
@@ -648,6 +651,8 @@ test.serial(
         characterToBuy.platformFee.value,
       'Alice received payout',
     );
+
+    await eventLoopIteration();
 
     charactersForSale = await E(publicFacet).getCharactersForSale();
     t.deepEqual(

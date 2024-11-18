@@ -16,7 +16,6 @@ import {
   marketplaceListingsLegendary,
 } from './base-inventory.js';
 
-import '@agoric/governance/src/types-ambient.js';
 import { AmountMath } from '@agoric/ertp/src/amountMath.js';
 
 const KREAD_LABEL = 'KREAd';
