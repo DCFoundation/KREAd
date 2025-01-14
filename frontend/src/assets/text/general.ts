@@ -26,11 +26,12 @@ export const general = {
   toolTipTitle: "tool tip title",
   toolTipInfo: "maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum.",
   thisFieldIsRequired: "this field is required",
-  mintNew: `mint new (IST)`,
+  mintNew: "mint new (IST)",
   theMinimiumAmountIs: "the minimum amount is IST 1",
   moreInfo: "more info",
   thereAreNoAssetsAvailable: "there are no assets available",
   logo: "KREAd",
+  sunsetTitle: "KREAd is sun-setting!",
   aCharcterBuilderApp:
     "KREAd is a character builder dApp, where all the characters and their items are dynamic NFTs. You have the freedom to build your character and the ownership of all the equipment attached to it. So feel free to sell them, trade them, or even burn them!",
   sagesBy: "SAGES by KREAd",
@@ -84,4 +85,5 @@ export const general = {
     "Activate your smart wallet to manage your transactions on the Agoric chain. This will allow you mint your characters and store your character's items and progress. \n" +
     "\n" +
     "Click “Activate wallet” to get started.",
+  sunsetText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nulla augue, aliquam at blandit efficitur, efficitur ac ex. Phasellus convallis sodales dapibus. In et tortor a sem ornare vestibulum vitae."
 };

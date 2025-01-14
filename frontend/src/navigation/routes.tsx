@@ -13,6 +13,7 @@ import { breakpoints } from "../design";
 import { OnboardingMobile } from "../pages/onboarding-mobile";
 import { ConnectWalletMobile } from "../pages/connect-wallet-mobile";
 import { PrivacyMobile } from "../pages/content-mobile";
+import { SunsetKread } from "../pages/sunset/sunset";
 
 export const InternalAppWrapper = () => {
   return (
@@ -37,6 +38,7 @@ export const InternalAppRoutes: FC = () => {
     <Route path={routes.connectWallet} element={<ConnectWallet />} />
     <Route path={routes.character} element={<Landing />} />
     <Route path={routes.createCharacter} element={<CreateCharacter />} />
+    <Route path={routes.sunset} element={<SunsetKread />} />
     <Route path={`${routes.shop}/:section`} element={<Shop />} />
     <Route path={`${routes.inventory}/:section`} element={<Inventory />} />
     <Route path={`${routes.buyItem}/:id`} element={<ItemBuy />} />
@@ -44,18 +46,18 @@ export const InternalAppRoutes: FC = () => {
     <Route path={`${routes.sellItem}/:category/:name`} element={<ItemSell />} />
     <Route path={`${routes.sellCharacter}/:id`} element={<CharacterSell />} />
     <Route path="*" element={<ErrorView />} />
-  </>
-  const mobileRoutes = <>
-    {Object.values(desktopOnlyPaths).map((path, index) => <Route path={path} element={<MobileNotAvailable />} key={index} />)}
-    <Route path={routes.connectWallet} element={<ConnectWalletMobile />} />
-    <Route path={routes.character} element={<LandingMobile />} />
-    <Route path={routes.createCharacter} element={<CreateCharacterMobile />} />
-    <Route path="*" element={<ErrorView />} />
-  </>
+  </>;
+  // const mobileRoutes = <>
+  //   {Object.values(desktopOnlyPaths).map((path, index) => <Route path={path} element={<MobileNotAvailable />} key={index} />)}
+  //   <Route path={routes.connectWallet} element={<ConnectWalletMobile />} />
+  //   <Route path={routes.character} element={<LandingMobile />} />
+  //   <Route path={routes.createCharacter} element={<CreateCharacterMobile />} />
+  //   <Route path="*" element={<ErrorView />} />
+  // </>;
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback} onError={() => navigate(routes.character)}>
       <Routes>
-       { isMobile ? mobileRoutes : desktopRoutes }
+        { desktopRoutes }
       </Routes>
     </ErrorBoundary>
   );

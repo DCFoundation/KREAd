@@ -75,7 +75,7 @@
     "@endo/captp": "^2.0.8",
     "@endo/eslint-plugin": "^0.4.0",
     "@endo/eventual-send": "^1.1.2",
-    "@endo/init": "^1.0.4",
+    "@endo/init": "^1.1.7",
     "@endo/lockdown": "1.0.4",
     "@endo/marshal": "^0.6.7",
     "@endo/nat": "^4.1.13",
@@ -102,5 +102,5 @@
     "vite-plugin-svgr": "^2.2.1",
     "vite-tsconfig-paths": "^3.5.0"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@4.4.1"
 }

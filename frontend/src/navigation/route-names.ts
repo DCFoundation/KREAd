@@ -10,6 +10,7 @@ export const routes = {
   inventoryCharacters: "/inventory/characters",
   items: "/items",
   createCharacter: "/create-character",
+  sunset: "/sunset",
   buyItem: "/buy-item",
   buyCharacter: "/buy-character",
   sellItem: "/sell-item",
