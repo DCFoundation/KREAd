@@ -1,0 +1,19 @@
+{
+  "consume": {
+    "kreadKit": true,
+    "kreadCommitteeKit": true,
+    "kreadCharterKit": true,
+    "agoricNamesAdmin": "makeCoreProposalBehavior",
+    "vatAdminSvc": "makeCoreProposalBehavior",
+    "zoe": "makeCoreProposalBehavior"
+  },
+  "evaluateBundleCap": "makeCoreProposalBehavior",
+  "installation": {
+    "produce": "makeCoreProposalBehavior"
+  },
+  "modules": {
+    "utils": {
+      "runModuleBehaviors": "makeCoreProposalBehavior"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "terminateKREAd",
+  "script": "terminateKREAd.js",
+  "permit": "terminateKREAd-permit.json",
+  "bundles": [
+    {
+      "entrypoint": "./terminate-kread.js",
+      "bundleID": "b1-77814c0a6fc7ae25369e76289e2c7a7d760b81973fea4079083839659042f10c89b5e26813d24fdfbc4d5e6c43713304a8ef879b224148360b93ed51f04b3690",
+      "fileName": "/Users/jorgelopes/.agoric/cache/b1-77814c0a6fc7ae25369e76289e2c7a7d760b81973fea4079083839659042f10c89b5e26813d24fdfbc4d5e6c43713304a8ef879b224148360b93ed51f04b3690.json"
+    }
+  ]
+}
